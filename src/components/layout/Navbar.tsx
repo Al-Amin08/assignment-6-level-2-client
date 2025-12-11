@@ -1,4 +1,4 @@
-import Logo from "@/assets/icons/Logo";
+// import Logo from "@/assets/icons/Logo";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -25,7 +25,8 @@ import { Link } from "react-router";
 const navigationLinks = [
   { href: "/", label: "Home", role: "PUBLIC" },
   { href: "/about", label: "About", role: "PUBLIC" },
-  { href: "/tours", label: "Tours", role: "PUBLIC" },
+  { href: "/features", label: "Features", role: "PUBLIC" },
+  { href: "/contact", label: "Contact", role: "PUBLIC" },
   // { href: "/admin", label: "Dashboard", role: role.admin },
   // { href: "/user", label: "Dashboard", role: role.user },
 ];
@@ -99,8 +100,9 @@ export default function Navbar() {
           </Popover>
           {/* Main nav */}
           <div className="flex items-center gap-6">
-            <a href="#" className="text-primary hover:text-primary/90">
-              <Logo />
+            <a href="#" className="text-primary hover:text-primary/90 flex ">
+              <img className="w-12 h-12" src="/wallet.png" alt="" />
+              <h3 className="my-auto text-lg font-semibold">Digital Wallet</h3>
             </a>
             {/* Navigation menu */}
             <NavigationMenu className="max-md:hidden">

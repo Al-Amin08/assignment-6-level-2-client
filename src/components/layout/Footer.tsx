@@ -2,17 +2,17 @@ import Logo from "@/assets/icons/Logo";
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="mx-auto container space-y-8 px-4 py-16">
+    <footer className="">
+      <div className="mx-auto container space-y-8 px-4 py-16 ">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
-            <div className="text-foreground">
+            <div className="">
               <Logo />
             </div>
 
             <p className="mt-4 max-w-xs text-muted-foreground/80">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non
-              cupiditate quae nam molestias.
+              A modern, responsive, and user-friendly application for managing
+              digital wallet operations with security and style.
             </p>
 
             <ul className="mt-8 flex gap-6">
@@ -136,173 +136,182 @@ export default function Footer() {
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
             <div>
-              <p className="font-medium text-gray-900">Services</p>
-
+              <p className="font-medium text-foreground">Features</p>
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
                   <a
                     href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    className="text-muted-foreground transition hover:text-primary"
                   >
-                    {" "}
-                    1on1 Coaching{" "}
+                    Wallet Management
                   </a>
                 </li>
-
                 <li>
                   <a
                     href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    className="text-muted-foreground transition hover:text-primary"
                   >
-                    {" "}
-                    Company Review{" "}
+                    Transaction History
                   </a>
                 </li>
-
                 <li>
                   <a
                     href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    className="text-muted-foreground transition hover:text-primary"
                   >
-                    {" "}
-                    Accounts Review{" "}
+                    Money Transfer
                   </a>
                 </li>
-
                 <li>
                   <a
                     href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    className="text-muted-foreground transition hover:text-primary"
                   >
-                    {" "}
-                    HR Consulting{" "}
+                    Role-Based Dashboard
                   </a>
                 </li>
-
                 <li>
                   <a
                     href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    className="text-muted-foreground transition hover:text-primary"
                   >
-                    {" "}
-                    SEO Optimisation{" "}
+                    Secure Authentication
                   </a>
                 </li>
               </ul>
             </div>
 
             <div>
-              <p className="font-medium text-gray-900">Company</p>
-
+              <p className="font-medium text-foreground">Quick Links</p>
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    href="https://youtu.be/SxR3mZe1f4w"
+                    className="text-muted-foreground transition hover:text-primary"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    {" "}
-                    About{" "}
+                    Overview Video
                   </a>
                 </li>
-
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    href="https://github.com/eshrak20/backend-digital-wallet"
+                    className="text-muted-foreground transition hover:text-primary"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    {" "}
-                    Meet the Team{" "}
+                    Backend API
                   </a>
                 </li>
-
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    href="https://drive.google.com/file/d/1QCTlaziJvm-ju8ES27C4qvEUh6Xemuyz/view"
+                    className="text-muted-foreground transition hover:text-primary"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    {" "}
-                    Accounts Review{" "}
+                    ER Diagram
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/eshrak20"
+                    className="text-muted-foreground transition hover:text-primary"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub Profile
                   </a>
                 </li>
               </ul>
             </div>
 
             <div>
-              <p className="font-medium text-gray-900">Helpful Links</p>
-
+              <p className="font-medium text-foreground">Tech Stack</p>
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    href="https://react.dev/"
+                    className="text-muted-foreground transition hover:text-primary"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    {" "}
-                    Contact{" "}
+                    React 19 + TypeScript
                   </a>
                 </li>
-
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    href="https://redux-toolkit.js.org/"
+                    className="text-muted-foreground transition hover:text-primary"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    {" "}
-                    FAQs{" "}
+                    Redux Toolkit
                   </a>
                 </li>
-
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    href="https://tailwindcss.com/"
+                    className="text-muted-foreground transition hover:text-primary"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    {" "}
-                    Live Chat{" "}
+                    Tailwind CSS
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://ui.shadcn.com/"
+                    className="text-muted-foreground transition hover:text-primary"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    shadcn/ui
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://react-hook-form.com/"
+                    className="text-muted-foreground transition hover:text-primary"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    React Hook Form
                   </a>
                 </li>
               </ul>
             </div>
 
             <div>
-              <p className="font-medium text-gray-900">Legal</p>
-
+              <p className="font-medium text-foreground">Contact</p>
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    href=""
+                    className="text-muted-foreground transition hover:text-primary"
                   >
-                    {" "}
-                    Accessibility{" "}
+                    Email
                   </a>
                 </li>
-
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    href="https://www.linkedin.com/"
+                    className="text-muted-foreground transition hover:text-primary"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    {" "}
-                    Returns Policy{" "}
+                    LinkedIn
                   </a>
                 </li>
-
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    href="https://www.facebook.com/"
+                    className="text-muted-foreground transition hover:text-primary"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    {" "}
-                    Refund Policy{" "}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    Hiring-3 Statistics
+                    Facebook
                   </a>
                 </li>
               </ul>
@@ -311,7 +320,7 @@ export default function Footer() {
         </div>
 
         <p className="text-xs text-gray-500">
-          © {new Date().getFullYear()}. Company Name. All rights reserved.
+          © {new Date().getFullYear()}. Digital Wallet. All rights reserved.
         </p>
       </div>
     </footer>
