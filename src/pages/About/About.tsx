@@ -3,13 +3,13 @@ import { Users } from "lucide-react";
 const About = () => {
   return (
     <>
-      <div className="bg-background text-foreground min-h-screen pt-24 px-6">
+      <div className="bg-background text-foreground min-h-screen pt-12 px-6">
         <section className="max-w-5xl mx-auto py-16">
           {/* Header */}
           <h1 className="text-4xl font-bold text-center mb-8">
             About Digital Wallet Management
           </h1>
-          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-30">
+          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-20">
             Digital Wallet Management is designed to make money transactions
             easier, safer, and faster. From secure savings to instant transfers,
             our service empowers both users and agents with seamless financial

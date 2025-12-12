@@ -1,4 +1,4 @@
-import { HelpCircle } from "lucide-react";
+import { MessageCircleQuestion } from "lucide-react";
 
 const Faq = () => {
   const faqs = [
@@ -39,7 +39,7 @@ const Faq = () => {
               className="bg-card text-card-foreground p-6 rounded-xl shadow hover:shadow-xl hover:bg-secondary transition-transform transform hover:-translate-y-1 duration-300"
             >
               <div className="flex items-center mb-2">
-                <HelpCircle
+                <MessageCircleQuestion
                   className="w-6 h-6 mr-2"
                   style={{ color: "var(--primary)" }}
                 />

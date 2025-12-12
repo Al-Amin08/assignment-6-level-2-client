@@ -6,8 +6,11 @@ export default function Footer() {
       <div className="mx-auto container space-y-8 px-4 py-16 ">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
-            <div className="">
+            <div className="flex">
               <Logo />
+              <h3 className="my-auto text-2xl font-semibold">
+                Digital<span className="text-sky-600 font-bold ">Wallet</span>
+              </h3>
             </div>
 
             <p className="mt-4 max-w-xs text-muted-foreground/80">

@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/popover";
 // import { ModeToggle } from "./ModeToggler";
 import { Link } from "react-router";
+import { ModeToggle } from "./ModeToggler";
 // import {
 //   authApi,
 //   useLogoutMutation,
@@ -101,9 +102,11 @@ export default function Navbar() {
           </Popover>
           {/* Main nav */}
           <div className="flex items-center gap-6">
-            <a href="#" className="text-primary hover:text-primary/90 flex ">
+            <a href="/" className="text-primary hover:text-primary/90 flex ">
               <img className="w-12 h-12" src="/wallet.png" alt="" />
-              <h3 className="my-auto text-lg font-semibold">Digital Wallet</h3>
+              <h3 className="my-auto text-lg font-semibold">
+                Digital<span className="text-sky-600 font-bold">Wallet</span>
+              </h3>
             </a>
             {/* Navigation menu */}
             <NavigationMenu className="max-md:hidden">
@@ -138,8 +141,8 @@ export default function Navbar() {
         </div>
         {/* Right side */}
         <div className="flex items-center gap-2">
-          {/* <ModeToggle />
-          {data?.data?.email && (
+          <ModeToggle />
+          {/* {data?.data?.email && (
             <Button
               onClick={handleLogOut}
               variant="outline"
