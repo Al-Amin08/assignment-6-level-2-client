@@ -16,6 +16,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Input } from "@/components/ui/input";
 import Password from "@/components/ui/Password";
+import { useRegisterMutation } from "@/redux/features/auth/auth.api";
+import { toast } from "sonner";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { RoleOfArray } from "@/constants/role";
 
 // import { useRegisterMutation } from "@/redux/features/auth/auth.api";
 // import { toast } from "sonner";
@@ -24,6 +34,7 @@ const registerSchema = z
   .object({
     name: z.string().min(2, { error: "Name is too low" }).max(50),
     email: z.email(),
+    role: z.string(),
     password: z.string().min(6, { error: "Password is too short" }),
     confirmPassword: z
       .string()
@@ -44,10 +55,11 @@ const RegisterForm = ({
   const form = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
+      name: "cummins",
+      email: "mahinkhanmahinkhan@gmail.com",
+      role: "USER",
+      password: "12345678A#",
+      confirmPassword: "12345678A#",
     },
   });
 
@@ -56,14 +68,16 @@ const RegisterForm = ({
       name: data.name,
       email: data.email,
       password: data.password,
+      role: data.role,
     };
     console.log(userInfo);
     try {
       // const result = await register(userInfo).unwrap();
       // console.log(result);
       // console.log(userInfo, "In the try catch");
-      // toast.success("User created successfully");
-      navigate("/verify", { state: data.email });
+      toast.success("User created successfully");
+      navigate("/login");
+      // navigate("/verify", { state: data.email });
     } catch (error) {
       console.error(error);
     }
@@ -114,7 +128,38 @@ const RegisterForm = ({
                   <FormMessage />
                 </FormItem>
               )}
-            />{" "}
+            />
+            <FormField
+              control={form.control}
+              name="role"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Role</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                    // disabled={divisionLoading}
+                  >
+                    <FormControl>
+                      <SelectTrigger className="w-full">
+                        <SelectValue />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {RoleOfArray.map((item: string) => (
+                        <SelectItem key={item} value={item}>
+                          {item}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormDescription className="sr-only">
+                    This is your public display name.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <FormField
               control={form.control}
               name="password"
