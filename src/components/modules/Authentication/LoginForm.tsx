@@ -9,12 +9,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useForm, type FieldValues, type SubmitHandler } from "react-hook-form";
 import { Link, useNavigate } from "react-router";
 
 import { Input } from "@/components/ui/input";
-// import { useLoginMutation } from "@/redux/features/auth/auth.api";
+
 import { toast } from "sonner";
+import { useLoginMutation } from "@/redux/features/auth/auth.api";
 
 // const registerSchema = z.object({
 //   name: z.string().min(2).max(50),
@@ -30,31 +31,31 @@ const LoginForm = ({
   const form = useForm({
     defaultValues: {
       email: "mahinkhanmahinkhan@gmail.com",
-      password: "123456",
+      password: "12345678A#",
     },
   });
-  //   const [login] = useLoginMutation();
+  const [login] = useLoginMutation();
   const navigate = useNavigate();
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     console.log(data);
     try {
-      //   const res = await login(data).unwrap();
-      //   if (res.success) {
-      //     toast.success("Logged in successfully");
-      //     navigate("/");
-      //   }
+      const res = await login(data).unwrap();
+      if (res.success) {
+        toast.success("Logged in successfully");
+        navigate("/");
+      }
       //   console.log(res);
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
 
-      //   if (error.data.message === "Password does not match") {
-      //     toast.error("Invalid credentials");
-      //   }
+      if (error.data.message === "Password does not match") {
+        toast.error("Invalid credentials");
+      }
 
-      //   if (error.data.message === "User is not verified") {
-      //     toast.error("Your account is not verified");
-      //     navigate("/verify", { state: data.email });
-      //   }
+      if (error.data.message === "User is not verified") {
+        toast.error("Your account is not verified");
+        navigate("/verify", { state: data.email });
+      }
     }
   };
   return (

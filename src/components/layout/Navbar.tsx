@@ -14,6 +14,7 @@ import {
 // import { ModeToggle } from "./ModeToggler";
 import { Link } from "react-router";
 import { ModeToggle } from "./ModeToggler";
+import { useUserInfoQuery } from "@/redux/features/auth/auth.api";
 // import {
 //   authApi,
 //   useLogoutMutation,
@@ -34,7 +35,7 @@ const navigationLinks = [
 ];
 
 export default function Navbar() {
-  // const { data } = useUserInfoQuery(undefined);
+  const { data } = useUserInfoQuery(undefined);
   // const [logout] = useLogoutMutation();
   // const dispatch = useAppDispatch();
   // console.log(data?.data?.email);
@@ -42,6 +43,7 @@ export default function Navbar() {
   //   await logout(undefined);
   //   dispatch(authApi.util.resetApiState());
   // };
+  console.log(data);
   return (
     <header className="border-b">
       <div className="container mx-auto px-4 flex h-16 items-center justify-between gap-4">
