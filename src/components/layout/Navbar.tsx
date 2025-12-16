@@ -14,7 +14,12 @@ import {
 // import { ModeToggle } from "./ModeToggler";
 import { Link } from "react-router";
 import { ModeToggle } from "./ModeToggler";
-import { useUserInfoQuery } from "@/redux/features/auth/auth.api";
+import {
+  authApi,
+  useLogOutMutation,
+  useUserInfoQuery,
+} from "@/redux/features/auth/auth.api";
+import { useAppDispatch } from "@/redux/hook";
 // import {
 //   authApi,
 //   useLogoutMutation,
@@ -36,14 +41,14 @@ const navigationLinks = [
 
 export default function Navbar() {
   const { data } = useUserInfoQuery(undefined);
-  // const [logout] = useLogoutMutation();
-  // const dispatch = useAppDispatch();
-  // console.log(data?.data?.email);
-  // const handleLogOut = async () => {
-  //   await logout(undefined);
-  //   dispatch(authApi.util.resetApiState());
-  // };
-  console.log(data);
+  const [logout] = useLogOutMutation();
+  const dispatch = useAppDispatch();
+  console.log(data?.data?.email);
+  const handleLogOut = async () => {
+    await logout(undefined);
+    dispatch(authApi.util.resetApiState());
+  };
+  // console.log(data?.data);
   return (
     <header className="border-b">
       <div className="container mx-auto px-4 flex h-16 items-center justify-between gap-4">
@@ -125,7 +130,7 @@ export default function Navbar() {
                         </NavigationMenuLink>
                       </NavigationMenuItem>
                     )}
-                    {/* {link.role === data?.data?.role && (
+                    {link.role === data?.data?.role && (
                       <NavigationMenuItem key={index}>
                         <NavigationMenuLink
                           asChild
@@ -134,7 +139,7 @@ export default function Navbar() {
                           <Link to={link.href}>{link.label}</Link>
                         </NavigationMenuLink>
                       </NavigationMenuItem>
-                    )} */}
+                    )}
                   </>
                 ))}
               </NavigationMenuList>
@@ -144,7 +149,7 @@ export default function Navbar() {
         {/* Right side */}
         <div className="flex items-center gap-2">
           <ModeToggle />
-          {/* {data?.data?.email && (
+          {data?.data?.email && (
             <Button
               onClick={handleLogOut}
               variant="outline"
@@ -157,7 +162,7 @@ export default function Navbar() {
             <Button asChild className="text-sm">
               <Link to="/login">Login</Link>
             </Button>
-          )} */}
+          )}
         </div>
       </div>
     </header>
