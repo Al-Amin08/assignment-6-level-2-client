@@ -1,65 +1,77 @@
-export const adminSidebarItems = [
+import CommissionHistory from "@/pages/admin_DashBoard/Commission/CommissionHistory";
+import ListOfAllUser from "@/pages/admin_DashBoard/ListOfAllUser";
+import MyProfile from "@/pages/admin_DashBoard/MyProfile";
+import AllTransactionHistory from "@/pages/admin_DashBoard/Transaction/AllTransactionHistory";
+import ApproveAgent from "@/pages/admin_DashBoard/Wallet/ApproveAgent";
+import GetAllWallet from "@/pages/admin_DashBoard/Wallet/GetAllWallet";
+import UnblockUser from "@/pages/admin_DashBoard/Wallet/UnblockUser";
+import type { ISidebarItem } from "@/Types";
+
+export const adminSidebarItems: ISidebarItem[] = [
   {
     title: "Admin Dashboard",
-    url: "#",
     items: [
       {
         title: "List of All Users",
-        url: "#",
+        url: "/admin/dashboard/list-of-users",
+        component: ListOfAllUser,
       },
 
       {
         title: "My Profile",
-        url: "#",
+        url: "/admin/dashboard/my-profile",
+        component: MyProfile,
       },
     ],
   },
 
   {
     title: "Commission Management",
-    url: "#",
     items: [
       {
         title: "Commission History",
-        url: "#",
+        url: "/admin/dashboard/commission-history",
+        component: CommissionHistory,
       },
     ],
   },
 
   {
     title: "Transaction Management",
-    url: "#",
     items: [
       {
         title: "All Transaction History",
-        url: "#",
+        url: "/admin/dashboard/all-transaction-history",
+        component: AllTransactionHistory,
       },
     ],
   },
   {
     title: "Wallet Management",
-    url: "#",
     items: [
       {
         title: "All Wallets Info",
-        url: "#",
+        url: "/admin/dashboard/get-all-wallet",
+        component: GetAllWallet,
       },
       {
         title: "Unblock User",
-        url: "#",
+        url: "/admin/dashboard/",
+        component: UnblockUser,
       },
-      {
-        title: "Block User",
-        url: "#",
-      },
+      //   {
+      //     title: "Block User",
+      //     url: "#",
+      //   },
       {
         title: "Approve Agent",
-        url: "#",
+        url: "/admin/dashboard/approve-agent",
+        component: ApproveAgent,
       },
-      {
-        title: "Suspend Agent",
-        url: "#",
-      },
+      //   {
+      //     title: "Suspend Agent",
+      //     url: "#",
+      //   },
     ],
   },
 ];
