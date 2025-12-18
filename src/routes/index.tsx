@@ -11,9 +11,13 @@ import Features from "@/pages/Features/Features";
 import Home from "@/pages/Home/Home";
 import { generateRoutes } from "@/utils/generateRoutes";
 
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import { adminSidebarItems } from "./adminSidebarItems";
 import { userSidebarItems } from "./userSidebarItems";
+import Unauthorized from "@/pages/Unauthrization";
+import withAuth from "@/utils/withAuth";
+import { role } from "@/constants/role";
+import type { TRole } from "@/Types";
 
 export const router = createBrowserRouter([
   {
@@ -43,14 +47,26 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    Component: DashBoardLayout,
+    Component: withAuth(DashBoardLayout, role.admin as TRole),
     path: "/admin",
-    children: [...generateRoutes(adminSidebarItems)],
+    children: [
+      {
+        index: true,
+        element: <Navigate to="/admin/dashboard/my-profile" />,
+      },
+      ...generateRoutes(adminSidebarItems),
+    ],
   },
   {
-    Component: DashBoardLayout,
+    Component: withAuth(DashBoardLayout, role.user as TRole),
     path: "/user",
-    children: [...generateRoutes(userSidebarItems)],
+    children: [
+      {
+        index: true,
+        element: <Navigate to="/user/dashboard/my-profile" />,
+      },
+      ...generateRoutes(userSidebarItems),
+    ],
   },
   {
     Component: Login,
@@ -59,5 +75,9 @@ export const router = createBrowserRouter([
   {
     Component: Register,
     path: "/register",
+  },
+  {
+    Component: Unauthorized,
+    path: "/unauthorized",
   },
 ]);

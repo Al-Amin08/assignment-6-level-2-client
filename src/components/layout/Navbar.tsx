@@ -20,6 +20,7 @@ import {
   useUserInfoQuery,
 } from "@/redux/features/auth/auth.api";
 import { useAppDispatch } from "@/redux/hook";
+import { role } from "@/constants/role";
 // import {
 //   authApi,
 //   useLogoutMutation,
@@ -35,8 +36,9 @@ const navigationLinks = [
   { href: "/features", label: "Features", role: "PUBLIC" },
   { href: "/contact", label: "Contact", role: "PUBLIC" },
   { href: "/faq", label: "FAQ", role: "PUBLIC" },
-  // { href: "/admin", label: "Dashboard", role: role.admin },
-  // { href: "/user", label: "Dashboard", role: role.user },
+  { href: "/admin", label: "Dashboard", role: role.admin },
+  { href: "/user", label: "Dashboard", role: role.user },
+  { href: "/agent", label: "Dashboard", role: role.agent },
 ];
 
 export default function Navbar() {
