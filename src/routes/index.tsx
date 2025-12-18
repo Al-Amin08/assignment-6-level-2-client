@@ -1,7 +1,7 @@
 import App from "@/App";
 import DashBoardLayout from "@/components/layout/DashBoardLayout";
 import About from "@/pages/About/About";
-import GetAllWallet from "@/pages/admin_DashBoard/Wallet/GetAllWallet";
+
 import Login from "@/pages/Authentication/Login";
 import Register from "@/pages/Authentication/Register";
 import Contact from "@/pages/Contact/Contact";
@@ -13,6 +13,7 @@ import { generateRoutes } from "@/utils/generateRoutes";
 
 import { createBrowserRouter } from "react-router";
 import { adminSidebarItems } from "./adminSidebarItems";
+import { userSidebarItems } from "./userSidebarItems";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,11 @@ export const router = createBrowserRouter([
     Component: DashBoardLayout,
     path: "/admin",
     children: [...generateRoutes(adminSidebarItems)],
+  },
+  {
+    Component: DashBoardLayout,
+    path: "/user",
+    children: [...generateRoutes(userSidebarItems)],
   },
   {
     Component: Login,
