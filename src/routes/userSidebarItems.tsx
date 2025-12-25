@@ -1,47 +1,49 @@
-import CommissionHistory from "@/pages/admin_DashBoard/Commission/CommissionHistory";
-import ListOfAllUser from "@/pages/admin_DashBoard/ListOfAllUser";
-import MyProfile from "@/pages/admin_DashBoard/MyProfile";
-import AllTransactionHistory from "@/pages/admin_DashBoard/Transaction/AllTransactionHistory";
-import ApproveAgent from "@/pages/admin_DashBoard/Wallet/ApproveAgent";
-import GetAllWallet from "@/pages/admin_DashBoard/Wallet/GetAllWallet";
-import UnblockUser from "@/pages/admin_DashBoard/Wallet/UnblockUser";
+import Deposit from "@/pages/Dashboard/Deposit";
+import transfer from "@/pages/Dashboard/Transfer";
+import Withdraw from "@/pages/Dashboard/Withdraw";
+import MyTransaction from "@/pages/Dashboard/MyTransaction";
+import MyProfile from "@/pages/Dashboard/MyProfile";
+
+import QuickActionUi from "@/pages/Dashboard/OverView/QuickAction";
 
 export const userSidebarItems = [
   {
     title: "User Dashboard",
     items: [
       {
-        title: "List of All Users",
-        url: "/user/dashboard/list-of-users",
-        component: ListOfAllUser,
+        title: "Quick Actions",
+        url: "/user/dashboard/quick-actions",
+        component: QuickActionUi,
+        icon: "FiZap",
       },
-
       {
         title: "My Profile",
         url: "/user/dashboard/my-profile",
         component: MyProfile,
+        icon: "FiUser",
       },
     ],
   },
 
-  {
-    title: "Commission Management",
-    items: [
-      {
-        title: "Commission History",
-        url: "/user/dashboard/commission-history",
-        component: CommissionHistory,
-      },
-    ],
-  },
+  // {
+  //   title: "Commission Management",
+  //   items: [
+  //     {
+  //       title: "Commission History",
+  //       url: "/user/dashboard/commission-history",
+  //       component: CommissionHistory,
+  //     },
+  //   ],
+  // },
 
   {
     title: "Transaction Management",
     items: [
       {
-        title: "All Transaction History",
-        url: "/user/dashboard/all-transaction-history",
-        component: AllTransactionHistory,
+        title: "Transaction History",
+        url: "/user/dashboard/my-transaction-history",
+        component: MyTransaction,
+        icon: "FiCreditCard",
       },
     ],
   },
@@ -49,28 +51,23 @@ export const userSidebarItems = [
     title: "Wallet Management",
     items: [
       {
-        title: "All Wallets Info",
-        url: "/user/dashboard/get-all-wallet",
-        component: GetAllWallet,
+        title: "Deposit Money",
+        url: "/user/dashboard/deposit-money",
+        component: Deposit,
+        icon: "FiDollarSign",
       },
       {
-        title: "Unblock User",
-        url: "/user/dashboard/",
-        component: UnblockUser,
+        title: "Transfer Money",
+        url: "/user/dashboard/transfer-money",
+        component: transfer,
+        icon: "FiSend",
       },
-      //   {
-      //     title: "Block User",
-      //     url: "#",
-      //   },
       {
-        title: "Approve Agent",
-        url: "/user/dashboard/approve-agent",
-        component: ApproveAgent,
+        title: "Withdraw Money",
+        url: "/user/dashboard/withdraw-money",
+        component: Withdraw,
+        icon: "FiArrowDownCircle",
       },
-      //   {
-      //     title: "Suspend Agent",
-      //     url: "#",
-      //   },
     ],
   },
 ];

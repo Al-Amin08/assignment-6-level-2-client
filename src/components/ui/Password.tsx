@@ -19,6 +19,7 @@ export default function Password({ ...field }) {
           id={id}
           placeholder="********"
           type={isVisible ? "text" : "password"}
+          autoComplete="new-password"
           {...field}
         />
         <button

@@ -18,6 +18,7 @@ import Unauthorized from "@/pages/Unauthrization";
 import withAuth from "@/utils/withAuth";
 import { role } from "@/constants/role";
 import type { TRole } from "@/Types";
+import { agentSidebarItems } from "./agentSideBar";
 
 export const router = createBrowserRouter([
   {
@@ -66,6 +67,17 @@ export const router = createBrowserRouter([
         element: <Navigate to="/user/dashboard/my-profile" />,
       },
       ...generateRoutes(userSidebarItems),
+    ],
+  },
+  {
+    Component: withAuth(DashBoardLayout, role.agent as TRole),
+    path: "/agent",
+    children: [
+      {
+        index: true,
+        element: <Navigate to="/agent/dashboard/my-profile" />,
+      },
+      ...generateRoutes(agentSidebarItems),
     ],
   },
   {

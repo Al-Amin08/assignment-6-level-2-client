@@ -1,10 +1,10 @@
-import CommissionHistory from "@/pages/admin_DashBoard/Commission/CommissionHistory";
-import ListOfAllUser from "@/pages/admin_DashBoard/ListOfAllUser";
-import MyProfile from "@/pages/admin_DashBoard/MyProfile";
-import AllTransactionHistory from "@/pages/admin_DashBoard/Transaction/AllTransactionHistory";
-import ApproveAgent from "@/pages/admin_DashBoard/Wallet/ApproveAgent";
-import GetAllWallet from "@/pages/admin_DashBoard/Wallet/GetAllWallet";
-import UnblockUser from "@/pages/admin_DashBoard/Wallet/UnblockUser";
+import CommissionHistory from "@/pages/Dashboard/admin_DashBoard/Commission/CommissionHistory";
+import ListOfAllUser from "@/pages/Dashboard/admin_DashBoard/ListOfAllUser";
+import MyProfile from "@/pages/Dashboard/MyProfile";
+import AllTransactionHistory from "@/pages/Dashboard/admin_DashBoard/Transaction/AllTransactionHistory";
+import ApproveAgent from "@/pages/Dashboard/admin_DashBoard/Wallet/ApproveAgent";
+import GetAllWallet from "@/pages/Dashboard/admin_DashBoard/Wallet/GetAllWallet";
+import UnblockUser from "@/pages/Dashboard/admin_DashBoard/Wallet/UnblockUser";
 import type { ISidebarItem } from "@/Types";
 
 export const adminSidebarItems: ISidebarItem[] = [

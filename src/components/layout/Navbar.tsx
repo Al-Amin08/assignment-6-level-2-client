@@ -14,13 +14,10 @@ import {
 // import { ModeToggle } from "./ModeToggler";
 import { Link } from "react-router";
 import { ModeToggle } from "./ModeToggler";
-import {
-  authApi,
-  useLogOutMutation,
-  useUserInfoQuery,
-} from "@/redux/features/auth/auth.api";
+import { authApi, useLogOutMutation } from "@/redux/features/auth/auth.api";
 import { useAppDispatch } from "@/redux/hook";
 import { role } from "@/constants/role";
+import { useUserInfoQuery } from "@/redux/features/User/user.api";
 // import {
 //   authApi,
 //   useLogoutMutation,

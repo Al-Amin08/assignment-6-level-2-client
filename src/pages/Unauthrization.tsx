@@ -1,8 +1,6 @@
 import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import { Home, ShieldAlert } from "lucide-react";
-// import "@lottiefiles/lottie-player";
-import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function Unauthorized() {
   return (
