@@ -5,6 +5,7 @@ import MyTransaction from "@/pages/Dashboard/MyTransaction";
 import MyProfile from "@/pages/Dashboard/MyProfile";
 
 import QuickActionUi from "@/pages/Dashboard/OverView/QuickAction";
+import MyWallet from "@/pages/Dashboard/MyWallet";
 
 export const userSidebarItems = [
   {
@@ -50,6 +51,12 @@ export const userSidebarItems = [
   {
     title: "Wallet Management",
     items: [
+      {
+        title: "Your Wallet",
+        url: "/user/dashboard/my-wallet",
+        component: MyWallet,
+        icon: "FiDollarSign",
+      },
       {
         title: "Deposit Money",
         url: "/user/dashboard/deposit-money",

@@ -17,7 +17,14 @@ export const userApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["USER"],
     }),
+    allUser: builder.query({
+      query: () => ({
+        url: "/user",
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useUserInfoQuery, useUpdateProfileMutation } = userApi;
+export const { useUserInfoQuery, useUpdateProfileMutation, useAllUserQuery } =
+  userApi;

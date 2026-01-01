@@ -38,11 +38,11 @@ const MyProfile = () => {
       password: data.password,
     };
     // updateProfile(data);
-    // const toastId = toast.loading("User Profile Updating...");
+    const toastId = toast.loading("User Profile Updating...");
     try {
       const result = await updateProfile(updatedUserInfo).unwrap();
       console.log(result);
-      toast.success("Profile updated successfully");
+      toast.success("Profile updated successfully", { id: toastId });
     } catch (error) {
       toast.error("Failed to update profile");
       console.error("Failed to update profile:", error);
@@ -78,8 +78,12 @@ const MyProfile = () => {
                 className=" mb-6 bg-transparent  hover:bg-gray-100/10 text-white   border mr-2 py-5"
                 onClick={() => setEditProfile(!editProfile)}
               >
-                <span className="font-light text-2xl mb-1">x</span>
-                <span className="hover:underline text-lg">Cancel</span>
+                <span className="text-foreground font-light text-2xl mb-1">
+                  x
+                </span>
+                <span className="text-foreground hover:underline text-lg">
+                  Cancel
+                </span>
               </Button>
               <Button
                 type="submit"

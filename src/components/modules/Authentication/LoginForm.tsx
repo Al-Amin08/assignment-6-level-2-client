@@ -32,7 +32,7 @@ const LoginForm = ({
   const form = useForm({
     defaultValues: {
       email: "mahinkhanmahinkhan@gmail.com",
-      password: "12345678A#",
+      password: "123456",
     },
   });
   const [login] = useLoginMutation();
@@ -47,15 +47,8 @@ const LoginForm = ({
       }
       //   console.log(res);
     } catch (error: any) {
-      console.log(error);
-
-      if (error.data.message === "Password does not match") {
+      if (error.data.message === "Password doesn't match") {
         toast.error("Invalid credentials");
-      }
-
-      if (error.data.message === "User is not verified") {
-        toast.error("Your account is not verified");
-        navigate("/verify", { state: data.email });
       }
     }
   };

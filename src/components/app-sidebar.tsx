@@ -15,6 +15,7 @@ import Logo from "@/assets/icons/Logo";
 import { NavLink, useLocation } from "react-router";
 import { getSideBarItems } from "@/utils/getSideBarItems";
 import { useUserInfoQuery } from "@/redux/features/User/user.api";
+import { ModeToggle } from "./layout/ModeToggler";
 
 export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
   const { data: userdata } = useUserInfoQuery(undefined);
@@ -93,7 +94,9 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
           );
         })}
       </SidebarContent>
-
+      <div className="ml-50 mb-4">
+        <ModeToggle />
+      </div>
       <SidebarRail />
     </Sidebar>
   );
